@@ -1,0 +1,196 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > Appointment</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">AppointmentService</a>
+</div>
+
+<h1>Coverage Summary for Class: Appointment (AppointmentService)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Appointment</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (7/7)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (12/12)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (22/22)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;/*
+&nbsp;Appointment.java
+&nbsp;Josh Patterson - SNHU, CS320 Software Test Automation &amp; QA
+&nbsp;11/19/2023
+&nbsp;
+&nbsp;A Appointment class, representing individual appointments which are managed by AppointmentService (AppointmentService.java).
+&nbsp; */
+&nbsp;
+&nbsp;package AppointmentService;
+&nbsp;
+&nbsp;import java.util.Date;
+&nbsp;
+&nbsp;public class Appointment {
+&nbsp;
+&nbsp;    private String m_id;
+&nbsp;    private Date m_date;
+&nbsp;    private String m_description;
+&nbsp;
+<b class="fc">&nbsp;    public Appointment(String id, Date date, String description) {</b>
+&nbsp;        // Update methods validate input
+<b class="fc">&nbsp;        updateID(id);</b>
+<b class="fc">&nbsp;        updateDate(date);</b>
+<b class="fc">&nbsp;        updateDescription(description);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    //==Getter Methods==//
+&nbsp;    public String getId() {
+<b class="fc">&nbsp;        return m_id;</b>
+&nbsp;    }
+&nbsp;    public Date getDate() {
+<b class="fc">&nbsp;        return m_date;</b>
+&nbsp;    }
+&nbsp;    public String getDescription() {
+<b class="fc">&nbsp;        return m_description;</b>
+&nbsp;    }
+&nbsp;    //===================//
+&nbsp;
+&nbsp;    //==Update Methods==//
+&nbsp;    private void updateID(String id) {
+&nbsp;        // Note: This is the only update method that is private to ensure it is only assigned once, on object creation
+&nbsp;
+&nbsp;        // Ensures ID is not null
+<b class="fc">&nbsp;        if (id == null) {</b>
+<b class="fc">&nbsp;            throw new IllegalArgumentException(&quot;Id cannot be null!&quot;);</b>
+&nbsp;        }
+&nbsp;        // Ensures ID is 10 characters or less
+<b class="fc">&nbsp;        else if (id.length() &gt; 10) {</b>
+<b class="fc">&nbsp;            throw new IllegalArgumentException(&quot;Id cannot be longer than 10 characters!&quot;);</b>
+&nbsp;        }
+&nbsp;        // Checks have passed, update ID
+<b class="fc">&nbsp;        m_id = id;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    protected void updateDate(Date date) {
+&nbsp;        // Ensures Date is not null
+<b class="fc">&nbsp;        if (date == null) {</b>
+<b class="fc">&nbsp;            throw new IllegalArgumentException(&quot;Date cannot be null!&quot;);</b>
+&nbsp;        }
+&nbsp;        // Ensures Date is not in the past
+<b class="fc">&nbsp;        else if (date.before(new Date())) {</b>
+<b class="fc">&nbsp;            throw new IllegalArgumentException(&quot;Date cannot be in the past!&quot;);</b>
+&nbsp;        }
+&nbsp;        // checks have passed, update date
+<b class="fc">&nbsp;        m_date = date;</b>
+&nbsp;    }
+&nbsp;    
+&nbsp;    protected void updateDescription(String description) {
+&nbsp;        // Ensures Description is not null
+<b class="fc">&nbsp;        if (description == null) {</b>
+<b class="fc">&nbsp;            throw new IllegalArgumentException(&quot;Description cannot be null!&quot;);</b>
+&nbsp;        }
+&nbsp;        // Ensures Description is no more than 50 characters
+<b class="fc">&nbsp;        else if (description.length() &gt; 50) {</b>
+<b class="fc">&nbsp;            throw new IllegalArgumentException(&quot;Description cannot be longer than 50 characters!&quot;);</b>
+&nbsp;        }
+&nbsp;        // Checks have passed, update description
+<b class="fc">&nbsp;        m_description = description;</b>
+&nbsp;    }
+&nbsp;    //===================//
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-09-18 19:41</div>
+</div>
+</body>
+</html>

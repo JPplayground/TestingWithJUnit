@@ -1,0 +1,230 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > Contact</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">ContactService</a>
+</div>
+
+<h1>Coverage Summary for Class: Contact (ContactService)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Contact</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (11/11)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    95%
+  </span>
+  <span class="absValue">
+    (19/20)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    97.2%
+  </span>
+  <span class="absValue">
+    (35/36)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;/*
+&nbsp;Contact.java
+&nbsp;Josh Patterson - SNHU, CS320 Software Test Automation &amp; QA
+&nbsp;11/12/2023
+&nbsp;
+&nbsp;A Contact class, representing individual contacts which are managed by ContactService (ContactService.java).
+&nbsp; */
+&nbsp;
+&nbsp;package ContactService;
+&nbsp;
+&nbsp;public class Contact {
+&nbsp;
+&nbsp;    private String m_id;
+&nbsp;    private String m_firstName;
+&nbsp;    private String m_lastName;
+&nbsp;    private String m_phone;
+&nbsp;    private String m_address;
+&nbsp;
+<b class="fc">&nbsp;    Contact(String id, String firstName, String lastName, String phone, String address) {</b>
+&nbsp;        // Update methods validate input
+<b class="fc">&nbsp;        updateID(id);</b>
+<b class="fc">&nbsp;        updateFirstName(firstName);</b>
+<b class="fc">&nbsp;        updateLastName(lastName);</b>
+<b class="fc">&nbsp;        updatePhone(phone);</b>
+<b class="fc">&nbsp;        updateAddress(address);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    //==Getter Methods==//
+&nbsp;    public String getId() {
+<b class="fc">&nbsp;        return this.m_id;</b>
+&nbsp;    }
+&nbsp;    public String getFirstName() {
+<b class="fc">&nbsp;        return m_firstName;</b>
+&nbsp;    }
+&nbsp;    public String getLastName() {
+<b class="fc">&nbsp;        return m_lastName;</b>
+&nbsp;    }
+&nbsp;    public String getPhone() {
+<b class="fc">&nbsp;        return m_phone;</b>
+&nbsp;    }
+&nbsp;    public String getAddress() {
+<b class="fc">&nbsp;        return m_address;</b>
+&nbsp;    }
+&nbsp;    //===================//
+&nbsp;
+&nbsp;    //==Update Methods==//
+&nbsp;    private void updateID(String _id) {
+&nbsp;        // Note: This is the only update method that is private to ensure it is only assigned once, on object creation
+&nbsp;
+&nbsp;        // Ensures ID is not null
+<b class="fc">&nbsp;        if (_id == null) {</b>
+<b class="fc">&nbsp;            throw new IllegalArgumentException(&quot;ID Parameter in Contact constructor cannot be nulL!&quot;);</b>
+&nbsp;        }
+&nbsp;        // Ensures ID is only up to 10 characters
+<b class="fc">&nbsp;        if (_id.length() &gt; 10) {</b>
+<b class="fc">&nbsp;            throw new IllegalArgumentException(&quot;ID cannot be more than 10 characters!&quot;);</b>
+&nbsp;        }
+&nbsp;        // Checks have passed, update the ID
+<b class="fc">&nbsp;        m_id = _id;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    protected void updateFirstName(String firstName) {
+&nbsp;        // Ensures ID is not null
+<b class="fc">&nbsp;        if (firstName == null) {</b>
+<b class="fc">&nbsp;            throw new IllegalArgumentException(&quot;Contact&#39;s firstName cannot be nulL!&quot;);</b>
+&nbsp;        }
+&nbsp;        // Ensures ID is only up to 10 characters
+<b class="fc">&nbsp;        if (firstName.length() &gt; 10) {</b>
+<b class="fc">&nbsp;            throw new IllegalArgumentException(&quot;Contact&#39;s firstName cannot be more than 10 characters!&quot;);</b>
+&nbsp;        }
+&nbsp;        // Checks have passed, update the newName
+<b class="fc">&nbsp;        m_firstName = firstName;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    protected void updateLastName(String lastName) {
+&nbsp;        // Ensures ID is not null
+<b class="fc">&nbsp;        if (lastName == null) {</b>
+<b class="fc">&nbsp;            throw new IllegalArgumentException(&quot;Contact&#39;s lastName cannot be nulL!&quot;);</b>
+&nbsp;        }
+&nbsp;        // Ensures ID is only up to 10 characters
+<b class="fc">&nbsp;        if (lastName.length() &gt; 10) {</b>
+<b class="fc">&nbsp;            throw new IllegalArgumentException(&quot;Contact&#39;s lastName cannot be more than 10 characters!&quot;);</b>
+&nbsp;        }
+&nbsp;        // Checks have passed, update the lastName
+<b class="fc">&nbsp;        m_lastName = lastName;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    protected void updatePhone(String phone) {
+&nbsp;        // Ensures phone is not null
+<b class="fc">&nbsp;        if (phone == null) {</b>
+<b class="fc">&nbsp;            throw new IllegalArgumentException(&quot;Contact&#39;s phone cannot be null!&quot;);</b>
+&nbsp;        }
+&nbsp;        // Ensures phone is exactly 10 characters and only consists of digits
+<b class="fc">&nbsp;        if ( !(phone.matches(&quot;\\d{10}&quot;)) ) {</b>
+<b class="fc">&nbsp;            throw new IllegalArgumentException(&quot;Contact&#39;s phone must be exactly 10 digits!&quot;);</b>
+&nbsp;        }
+&nbsp;        // Checks have passed, update the phone
+<b class="fc">&nbsp;        m_phone = phone;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    protected void updateAddress(String address) {
+&nbsp;        // Ensures address is not null
+<b class="fc">&nbsp;        if (address == null) {</b>
+<b class="fc">&nbsp;            throw new IllegalArgumentException(&quot;Contact&#39;s address cannot be null!&quot;);</b>
+&nbsp;        }
+&nbsp;        // Ensures address is only up to 30 characters
+<b class="pc">&nbsp;        if (address.length() &gt; 30) {</b>
+<b class="nc">&nbsp;            throw new IllegalArgumentException(&quot;Contact&#39;s address cannot be longer than 30 characters!&quot;);</b>
+&nbsp;        }
+&nbsp;        // Checks have passed, update the address
+<b class="fc">&nbsp;        m_address = address;</b>
+&nbsp;    }
+&nbsp;    //===================//
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-09-18 19:41</div>
+</div>
+</body>
+</html>
