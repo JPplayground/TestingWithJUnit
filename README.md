@@ -20,5 +20,9 @@ mvn clean test
 For this project I also utilized Jenkins to get some practice with Jenkins. On the chance that you are trying to replicate this process,
 install Docker and run Jenkins from there.  With the proper setup you can access Jenkins on localhost:8080 and construct a build process.
 
+Running Docker Container:
 ![Docker container running](images/docker-container-running.png)
+Jenkins Build Output:
 ![Jenkins Build Output](images/jenkins-build-result.png)
+Jenkins Test Report:
+![Jenkins Test Reulst](images/captured-test-results.png)
